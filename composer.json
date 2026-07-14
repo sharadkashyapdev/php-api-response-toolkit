@@ -1,0 +1,26 @@
+﻿{
+  "name": "sharadkashyap/php-api-response-toolkit",
+  "description": "A lightweight, framework-independent PHP toolkit for consistent JSON API responses and error handling.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sharad Kashyap"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "SharadKashyap\\ApiResponse\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SharadKashyap\\ApiResponse\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
