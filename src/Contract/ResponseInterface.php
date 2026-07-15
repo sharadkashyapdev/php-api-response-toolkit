@@ -2,43 +2,18 @@
 
 declare(strict_types=1);
 
-namespace SharadKashyap\ApiResponse\Response;
+namespace SharadKashyap\ApiResponse\Contract;
 
-use SharadKashyap\ApiResponse\Contract\ResponseInterface;
-
-final readonly class SuccessResponse implements ResponseInterface
+interface ResponseInterface
 {
-    public function __construct(
-        private string $message,
-        private mixed $data = null,
-        private int $statusCode = 200,
-    ) {
-    }
+    /**
+     * @return array<string, mixed>
+     */
+    public function toArray(): array;
 
-    public function toArray(): array
-    {
-        return [
-            'success' => true,
-            'message' => $this->message,
-            'data' => $this->data,
-        ];
-    }
+    public function toJson(): string;
 
-    public function toJson(): string
-    {
-        return json_encode(
-            $this->toArray(),
-            JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
-        );
-    }
+    public function getStatusCode(): int;
 
-    public function getStatusCode(): int
-    {
-        return $this->statusCode;
-    }
-
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
+    public function getMessage(): string;
 }
