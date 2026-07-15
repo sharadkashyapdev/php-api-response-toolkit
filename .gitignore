@@ -9,3 +9,6 @@ Thumbs.db
 /.phpunit.cache/
 
 composer.phar
+
+composer.ps1
+.php-cs-fixer.cache
