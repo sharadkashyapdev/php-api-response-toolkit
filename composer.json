@@ -8,9 +8,17 @@
       "name": "Sharad Kashyap"
     }
   ],
+  "homepage": "https://github.com/sharadkashyapdev/php-api-response-toolkit",
+  "keywords": [
+    "php",
+    "api",
+    "json",
+    "response",
+    "rest"
+  ],
   "require": {
-  "php": "^8.2"
-},
+    "php": "^8.2"
+  },
   "autoload": {
     "psr-4": {
       "SharadKashyap\\ApiResponse\\": "src/"
@@ -27,5 +35,10 @@
     "phpunit/phpunit": "^11.5",
     "phpstan/phpstan": "^2.2",
     "friendsofphp/php-cs-fixer": "^3.95"
-  }
+  },
+  "scripts": {
+  "test": "vendor/bin/phpunit",
+  "analyse": "vendor/bin/phpstan analyse",
+  "format": "vendor/bin/php-cs-fixer fix"
+}
 }
